@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're In — MyBarber</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f2ecdd;
+    --card: #fbf8f0;
+    --ink: #16241c;
+    --subtext: #55645a;
+    --accent-ink: #7a5423;
+    --ring: rgba(169, 122, 53, 0.35);
+    --hairline: rgba(22, 36, 28, 0.14);
+    --badge-bg: rgba(169, 122, 53, 0.14);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #101c14;
+      --card: #16251b;
+      --ink: #ece5d3;
+      --subtext: #9db09f;
+      --accent-ink: #f0c976;
+      --ring: rgba(208, 162, 78, 0.4);
+      --hairline: rgba(236, 229, 211, 0.14);
+      --badge-bg: rgba(208, 162, 78, 0.16);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Karla", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 15%, var(--hairline) 0, transparent 45%),
+      radial-gradient(circle at 85% 85%, var(--hairline) 0, transparent 45%);
+    background-repeat: no-repeat;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    padding: 44px 32px 36px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .mark {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin: 0 0 28px;
+  }
+
+  .badge {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 24px;
+    border-radius: 999px;
+    background: var(--badge-bg);
+    border: 1.5px solid var(--ring);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: settle 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .badge svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--accent-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .badge { animation: none; }
+  }
+
+  @keyframes settle {
+    from { opacity: 0; transform: scale(0.75); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--subtext);
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .rule {
+    width: 32px;
+    height: 1px;
+    background: var(--hairline);
+    margin: 24px auto;
+  }
+
+  .fine {
+    font-size: 12.5px;
+    color: var(--subtext);
+    opacity: 0.85;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <p class="mark">MyBarber</p>
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h1>Your email is confirmed</h1>
+    <p>The account's ready to go. You can close this tab now and head back to the app to sign in.</p>
+    <div class="rule"></div>
+    <p class="fine">This page is just a receipt — nothing more to do here.</p>
+  </div>
+</body>
+</html>
