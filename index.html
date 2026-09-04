@@ -8,27 +8,36 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /*
+   * Colors mirror the app's own Material 3 scheme: ColorScheme.fromSeed
+   * with seedColor 0xFF8B5E34 (lib/core/theme/app_theme.dart). Keep these
+   * two blocks in sync if that seed color ever changes.
+   */
   :root {
-    --paper: #f2ecdd;
-    --card: #fbf8f0;
-    --ink: #16241c;
-    --subtext: #55645a;
-    --accent-ink: #7a5423;
-    --ring: rgba(169, 122, 53, 0.35);
-    --hairline: rgba(22, 36, 28, 0.14);
-    --badge-bg: rgba(169, 122, 53, 0.14);
+    --surface: #fff8f5;
+    --card: #f5e5db;
+    --on-surface: #221a14;
+    --on-surface-variant: #51443a;
+    --primary: #87521b;
+    --on-primary: #ffffff;
+    --ring: rgba(135, 82, 27, 0.35);
+    --outline-variant: #d6c3b6;
+    --badge-bg: rgba(135, 82, 27, 0.14);
+    --hairline: rgba(34, 26, 20, 0.14);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #101c14;
-      --card: #16251b;
-      --ink: #ece5d3;
-      --subtext: #9db09f;
-      --accent-ink: #f0c976;
-      --ring: rgba(208, 162, 78, 0.4);
-      --hairline: rgba(236, 229, 211, 0.14);
-      --badge-bg: rgba(208, 162, 78, 0.16);
+      --surface: #19120c;
+      --card: #312822;
+      --on-surface: #efe0d5;
+      --on-surface-variant: #d6c3b6;
+      --primary: #ffb878;
+      --on-primary: #4b2700;
+      --ring: rgba(255, 184, 120, 0.4);
+      --outline-variant: #51443a;
+      --badge-bg: rgba(255, 184, 120, 0.16);
+      --hairline: rgba(239, 224, 213, 0.14);
     }
   }
 
@@ -40,8 +49,8 @@
   }
 
   body {
-    background: var(--paper);
-    color: var(--ink);
+    background: var(--surface);
+    color: var(--on-surface);
     font-family: "Karla", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
     display: flex;
     align-items: center;
@@ -58,7 +67,7 @@
     width: 100%;
     max-width: 380px;
     background: var(--card);
-    border: 1px solid var(--hairline);
+    border: 1px solid var(--outline-variant);
     border-radius: 10px;
     padding: 44px 32px 36px;
     text-align: center;
@@ -71,7 +80,7 @@
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--accent-ink);
+    color: var(--primary);
     margin: 0 0 28px;
   }
 
@@ -91,7 +100,7 @@
   .badge svg {
     width: 26px;
     height: 26px;
-    stroke: var(--accent-ink);
+    stroke: var(--primary);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -116,7 +125,7 @@
   p {
     font-size: 15px;
     line-height: 1.6;
-    color: var(--subtext);
+    color: var(--on-surface-variant);
     margin: 0;
     text-wrap: balance;
   }
@@ -130,7 +139,7 @@
 
   .fine {
     font-size: 12.5px;
-    color: var(--subtext);
+    color: var(--on-surface-variant);
     opacity: 0.85;
   }
 </style>
